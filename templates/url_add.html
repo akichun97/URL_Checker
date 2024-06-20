@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить URL</title>
+</head>
+<body>
+    <h1>Добавить URL</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="url" placeholder="Введите URL">
+        <button type="submit">Добавить</button>
+    </form>
+</body>
+</html>

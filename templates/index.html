@@ -1,0 +1,33 @@
+<!-- templates/url_checker/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URL Checker</title>
+</head>
+<body>
+    <h1>Список URL</h1>
+    <ul>
+        {% for url in urls %}
+            <li>
+                <a href="{{ url.url }}">{{ url.url }}</a>
+                <span class="status {% if url.is_available %}available{% else %}unavailable{% endif %}">
+                    {% if url.is_available %}Доступен{% else %}Недоступен{% endif %}
+                </span>
+                <button onclick="checkUrl({{ url.id }})">Проверить</button>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'url_add' %}">Добавить URL</a>
+    <button onclick="checkAllUrls()">Проверить все</button>
+    <script>
+        function checkUrl(urlId) {
+            window.location.href = '/url_check/';
+        }
+        function checkAllUrls() {
+            window.location.href = '/all_urls_check/';
+        }
+    </script>
+</body>
+</html>
+
