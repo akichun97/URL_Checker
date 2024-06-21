@@ -21,7 +21,7 @@ from myapp.views import *
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', index, name='index'),
-    path('url_add/', url_add, name='url_add'),
+    # path('url_add/', url_add, name='url_add'),
     path('url_check/', url_check, name='url_check'),
     # path('all_urls_check/', all_urls_check, name='all_urls_check'),
 ]
